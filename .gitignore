@@ -1,0 +1,20 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+dist-types/
+
+# TypeScript build cache
+*.tsbuildinfo
+
+# Local env / IDE
+.vercel/
+.DS_Store
+*.log
+.env
+.env.local
+
+# Tooling local state
+.codegraph/
+.omo/
