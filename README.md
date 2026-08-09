@@ -1,10 +1,19 @@
-# 🍎 사과게임 · sigco fruitbox v0.2
+# 🍎 사과게임 · sigco fruitbox v0.3
+
+[![Live](https://img.shields.io/badge/Live-sigco--fruitbox.vercel.app-000?logo=vercel&logoColor=white)](https://sigco-fruitbox.vercel.app)
+[![GitHub](https://img.shields.io/badge/GitHub-sigco3111%2Ffruitbox-181717?logo=github)](https://github.com/sigco3111/fruitbox)
+[![License](https://img.shields.io/badge/License-MIT-green)](#license)
 
 매일 새로운 17×10 사과 보드에서 숫자 사과를 직사각형으로 묶어 목표 합과 같게 지우는 120초 퍼즐 게임입니다.
 
 원작: <https://fruitboxgame.com/ko#fruit-box-rules> 의 사과게임 메커니즘을 그대로 구현하면서, **매 판마다 목표 합이 8 / 10 / 12 / 15 중 하나로 랜덤 변경**되는 커스텀 규칙을 추가했습니다.
 
+> 🎮 **즉시 플레이**: https://sigco-fruitbox.vercel.app
+
+---
+
 ## 🎮 규칙
+
 - 17열 × 10행 격자에 1~9 숫자가 적힌 사과 170개가 놓입니다.
 - 사과를 직사각형으로 드래그해, 영역 안에 남은 사과의 합이 **목표 합(target sum)** 과 정확히 같으면 모두 사라집니다.
   - 합이 맞으면 **테두리가 빨간색**으로 표시되고 우상단 모서리에 합계가 뜹니다.
@@ -15,6 +24,7 @@
 - 힌트 버튼은 한 판에 1회 사용 가능하며, 가능한 직사각형 하나를 노란색으로 표시합니다.
 
 ## 🧩 기능
+
 - ✅ 매일 새로운 보드 (날짜 기반 시드) — 같은 날이면 모든 플레이어가 같은 보드
 - ✅ SVG 사과 (잎+줄기+그라데이션) + 색맹 모드
 - ✅ 한국어 / 영어 토글 (자동 감지 + 수동 전환, localStorage 저장)
@@ -38,7 +48,19 @@ npm run build        # vite build → dist/
 npm run preview      # serve dist/
 ```
 
-## 🚀 배포 (Vercel)
+요구 환경: Node 20+ (Vercel은 24.x)
+
+## 🚀 배포
+
+### Vercel (자동)
+
+GitHub `main` 푸시 → Vercel이 자동 빌드/배포합니다. 약 10–15초.
+
+- **Production URL**: https://sigco-fruitbox.vercel.app
+- **GitHub repo**: https://github.com/sigco3111/fruitbox
+- 첫 연결 시: Vercel 대시보드에서 `sigco-fruitbox` 프로젝트 → Settings → Git → `sigco3111/fruitbox` 연결
+
+### CLI (일회성)
 
 ```bash
 vercel deploy --prod
@@ -65,6 +87,10 @@ src/
     GameOverPanel.tsx      종료 모달
 ```
 
+### 핸드오프 노트
+
+버그 수정 이력은 [`HANDOFF_BUGFIX.md`](./HANDOFF_BUGFIX.md) (v0.2 → v0.2.1: `newRound` 인자 제거로 React Minified Error #31 해결) 참고.
+
 ## 🧠 시드 규칙
 
 `createRound(roundIndex)` 는 다음 시드를 사용합니다:
@@ -75,6 +101,7 @@ board = mulberry32(seed) 로 1..9 균등 난수 채움
 ```
 
 따라서:
+
 - 같은 날, 같은 roundIndex → 같은 보드 (모든 사용자가 공유)
 - `roundIndex` 만 바꾸면 즉시 새 보드 (재시도 가능)
 - `target` 만 바꾸면 같은 패턴에서 다른 합 목표 → 다양한 난이도
@@ -86,3 +113,7 @@ board = mulberry32(seed) 로 1..9 균등 난수 채움
 
 수정하려면 `src/game/engine.ts` 상단의 `TARGET_SUMS` 배열을 바꾸세요.
 시드는 `target`을 키에 포함하므로, 같은 roundIndex라도 목표 합이 다르면 보드도 달라집니다.
+
+## 📜 라이선스
+
+MIT — 원작 [fruitboxgame.com](https://fruitboxgame.com) 의 사과게임 메커니즘을 차용했으며, 본 저장소의 모든 코드는 MIT 라이선스로 배포됩니다.
