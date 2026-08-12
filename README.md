@@ -1,6 +1,6 @@
 # 🍎 사과게임 · sigco fruitbox v0.3
 
-[![Live](https://img.shields.io/badge/Live-sigco--fruitbox.vercel.app-000?logo=vercel&logoColor=white)](https://sigco-fruitbox.vercel.app)
+[![Live](https://img.shields.io/badge/Live-sigco--fruitbox.vercel.app-000?logo=vercel&logoColor=white)](https://sigco3111.github.io/fruitbox)
 [![GitHub](https://img.shields.io/badge/GitHub-sigco3111%2Ffruitbox-181717?logo=github)](https://github.com/sigco3111/fruitbox)
 [![License](https://img.shields.io/badge/License-MIT-green)](#license)
 
@@ -8,7 +8,7 @@
 
 원작: <https://fruitboxgame.com/ko#fruit-box-rules> 의 사과게임 메커니즘을 그대로 구현하면서, **매 판마다 목표 합이 8 / 10 / 12 / 15 중 하나로 랜덤 변경**되는 커스텀 규칙을 추가했습니다.
 
-> 🎮 **즉시 플레이**: https://sigco-fruitbox.vercel.app
+> 🎮 **즉시 플레이**: https://sigco3111.github.io/fruitbox
 
 ---
 
@@ -56,7 +56,7 @@ npm run preview      # serve dist/
 
 GitHub `main` 푸시 → Vercel이 자동 빌드/배포합니다. 약 10–15초.
 
-- **Production URL**: https://sigco-fruitbox.vercel.app
+- **Production URL**: https://sigco3111.github.io/fruitbox
 - **GitHub repo**: https://github.com/sigco3111/fruitbox
 - 첫 연결 시: Vercel 대시보드에서 `sigco-fruitbox` 프로젝트 → Settings → Git → `sigco3111/fruitbox` 연결
 
